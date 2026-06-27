@@ -137,24 +137,16 @@ export default function DailyEntry({ entry, onChange }) {
             label="von"
             value={entry.sleepFrom}
             onChange={(v) => {
-              update('sleepFrom', v)
-              // Auto-calculate sleep hours
-              if (v && entry.sleepTo) {
-                const hours = calculateSleepHours(v, entry.sleepTo)
-                update('sleepHours', hours)
-              }
+              const hours = (v && entry.sleepTo) ? calculateSleepHours(v, entry.sleepTo) : entry.sleepHours
+              onChange({ ...entry, sleepFrom: v, sleepHours: hours })
             }}
           />
           <TimeInput
             label="bis"
             value={entry.sleepTo}
             onChange={(v) => {
-              update('sleepTo', v)
-              // Auto-calculate sleep hours
-              if (entry.sleepFrom && v) {
-                const hours = calculateSleepHours(entry.sleepFrom, v)
-                update('sleepHours', hours)
-              }
+              const hours = (entry.sleepFrom && v) ? calculateSleepHours(entry.sleepFrom, v) : entry.sleepHours
+              onChange({ ...entry, sleepTo: v, sleepHours: hours })
             }}
           />
         </div>

@@ -63,7 +63,7 @@ export const DEFAULT_ENTRY = {
   stressMidday: 5,
   stressEvening: 5,
   mainStressor: '',
-  sleepHours: 7,
+  sleepHours: 8,
   sleepFrom: '23:00',
   sleepTo: '07:00',
   sleepQuality: 3,
