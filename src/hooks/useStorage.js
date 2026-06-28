@@ -33,7 +33,7 @@ export function useStorage() {
 
   // Get entry for a specific date
   const getEntry = (dateStr) => {
-    return entries[dateStr] || { ...DEFAULT_ENTRY, date: dateStr }
+    return { ...DEFAULT_ENTRY, ...entries[dateStr], date: dateStr }
   }
 
   // Save entry for a specific date
