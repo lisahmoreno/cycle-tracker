@@ -1,3 +1,9 @@
 node_modules
 dist
 .env
+.vercel
+
+# personal data — never commit
+*.pdf
+lifestyle-tagebuch*.json
+*tagebuch*.json
